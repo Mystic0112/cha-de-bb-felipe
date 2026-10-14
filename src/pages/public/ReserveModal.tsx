@@ -44,16 +44,16 @@ export function ReserveModal({ client, gift, onClose }: ReserveModalProps) {
     return (
       <Modal key="success" title="Presente escolhido!" onClose={onClose}>
         <div role="status" className="text-center py-2">
-          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400">
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-baby-100 border border-baby-200 text-baby-600 dark:bg-sky-500/10 dark:border-sky-500/20 dark:text-sky-400">
             <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="20 6 9 17 4 12" />
             </svg>
           </div>
-          <p className="text-slate-200 text-base">
-            Muito obrigado, <strong className="text-white">{guestName}</strong>! O presente <strong className="text-sky-300">{gift.title}</strong>{' '}
+          <p className="text-slate-700 dark:text-slate-200 text-base">
+            Muito obrigado, <strong className="text-slate-900 dark:text-white">{guestName}</strong>! O presente <strong className="text-baby-700 dark:text-sky-300">{gift.title}</strong>{' '}
             foi reservado para você.
           </p>
-          <p className="mt-2 text-sm text-slate-400">O Felipe e a família agradecem imensamente o carinho.</p>
+          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">O Felipe e a família agradecem imensamente o carinho.</p>
           <button type="button" className="btn-primary mt-6 w-full" onClick={onClose}>
             Voltar para a lista
           </button>
@@ -66,8 +66,8 @@ export function ReserveModal({ client, gift, onClose }: ReserveModalProps) {
     return (
       <Modal key="soldout" title="Presente esgotado" onClose={onClose}>
         <div className="py-2 text-center">
-          <p role="alert" className="text-slate-300">
-            Que pena! Alguém acabou de escolher a última unidade de <strong className="text-white">{gift.title}</strong>.
+          <p role="alert" className="text-slate-700 dark:text-slate-300">
+            Que pena! Alguém acabou de escolher a última unidade de <strong className="text-slate-900 dark:text-white">{gift.title}</strong>.
             Que tal escolher outro item da lista?
           </p>
           <button type="button" className="btn-primary mt-6 w-full" onClick={onClose}>

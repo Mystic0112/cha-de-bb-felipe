@@ -34,14 +34,14 @@ export function GiftRow({ gift, onSaveTotal, onRemove }: GiftRowProps) {
   }
 
   return (
-    <form onSubmit={handleSave} className="card flex flex-wrap items-center gap-3 p-3.5 border-slate-800">
+    <form onSubmit={handleSave} className="card flex flex-wrap items-center gap-3 p-3.5 border-baby-100 dark:border-slate-800">
       <div className="min-w-0 flex-1">
-        <p className="font-semibold text-slate-100">{gift.title}</p>
-        <p className="text-xs text-slate-400 mt-0.5">
-          <span className="text-sky-400 font-medium">{gift.category}</span> · {reserved} escolhido(s) · <span className="text-slate-300 font-medium">{gift.available_quantity} disponível(is)</span>
+        <p className="font-semibold text-slate-800 dark:text-slate-100">{gift.title}</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+          <span className="text-baby-600 dark:text-sky-400 font-medium">{gift.category}</span> · {reserved} escolhido(s) · <span className="text-slate-700 dark:text-slate-300 font-medium">{gift.available_quantity} disponível(is)</span>
         </p>
       </div>
-      <label htmlFor={`${id}-total`} className="text-sm font-medium text-slate-300">
+      <label htmlFor={`${id}-total`} className="text-sm font-medium text-slate-700 dark:text-slate-300">
         Total
       </label>
       <input

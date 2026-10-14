@@ -11,8 +11,8 @@ export function GiftCategory({ group, onChoose }: GiftCategoryProps) {
   return (
     <section aria-labelledby={headingId}>
       <div className="mb-3.5 flex items-center gap-2.5 px-1">
-        <span className="h-2 w-2 rounded-full bg-sky-400 shadow-sm shadow-sky-400/50" aria-hidden="true" />
-        <h3 id={headingId} className="text-lg font-bold tracking-wide text-slate-100">
+        <span className="h-2 w-2 rounded-full bg-baby-500 dark:bg-sky-400 shadow-sm" aria-hidden="true" />
+        <h3 id={headingId} className="text-lg font-bold tracking-wide text-baby-700 dark:text-slate-100">
           {group.category}
         </h3>
       </div>

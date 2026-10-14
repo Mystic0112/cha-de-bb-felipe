@@ -1,6 +1,7 @@
 import type { SupabaseClient } from '@supabase/supabase-js'
 import { useMemo, useState } from 'react'
 import { StatusMessage } from '../../components/StatusMessage'
+import { ThemeToggle } from '../../components/ThemeToggle'
 import { useGifts } from '../../hooks/useGifts'
 import { groupByCategory } from '../../lib/gifts'
 import type { Gift } from '../../lib/types'
@@ -21,6 +22,9 @@ export function PublicPage({ client }: { client: SupabaseClient }) {
 
   return (
     <div className="mx-auto max-w-3xl px-4 pb-16">
+      <div className="flex justify-end pt-4 sm:pt-6">
+        <ThemeToggle />
+      </div>
       <Hero />
       <main id="lista" aria-labelledby="lista-titulo">
         <h2 id="lista-titulo" className="sr-only">

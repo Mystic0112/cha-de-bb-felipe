@@ -7,9 +7,9 @@ interface SummaryProps {
 
 function Stat({ label, value }: { label: string; value: string | number }) {
   return (
-    <div className="card p-4.5 border-slate-800">
-      <dt className="text-xs font-semibold tracking-wider text-slate-400 uppercase">{label}</dt>
-      <dd className="mt-1.5 text-2xl font-black text-white">{value}</dd>
+    <div className="card p-4.5 border-baby-100 dark:border-slate-800">
+      <dt className="text-xs font-semibold tracking-wider text-slate-500 dark:text-slate-400 uppercase">{label}</dt>
+      <dd className="mt-1.5 text-2xl font-black text-baby-700 dark:text-white">{value}</dd>
     </div>
   )
 }
@@ -22,7 +22,7 @@ export function Summary({ gifts, reservationsCount }: SummaryProps) {
 
   return (
     <section aria-labelledby="resumo-titulo">
-      <h2 id="resumo-titulo" className="mb-3 text-lg font-bold text-white">
+      <h2 id="resumo-titulo" className="mb-3 text-lg font-bold text-baby-700 dark:text-white">
         Resumo
       </h2>
       <dl className="grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -31,20 +31,20 @@ export function Summary({ gifts, reservationsCount }: SummaryProps) {
         <Stat label="Ainda disponíveis" value={available} />
         <Stat label="Reservas" value={reservationsCount} />
       </dl>
-      <div className="mt-4 card p-4 border-slate-800">
-        <div className="flex items-center justify-between text-xs font-medium text-slate-400 mb-2">
+      <div className="mt-4 card p-4 border-baby-100 dark:border-slate-800">
+        <div className="flex items-center justify-between text-xs font-medium text-slate-500 dark:text-slate-400 mb-2">
           <span>Progresso de presentes escolhidos</span>
-          <span className="font-bold text-sky-400">{percent}%</span>
+          <span className="font-bold text-baby-600 dark:text-sky-400">{percent}%</span>
         </div>
         <div
-          className="h-2.5 overflow-hidden rounded-full bg-slate-950 border border-slate-800"
+          className="h-2.5 overflow-hidden rounded-full bg-baby-100 dark:bg-slate-950 border border-baby-200 dark:border-slate-800"
           role="progressbar"
           aria-label="Progresso da lista"
           aria-valuemin={0}
           aria-valuemax={100}
           aria-valuenow={percent}
         >
-          <div className="h-full rounded-full bg-gradient-to-r from-sky-500 to-cyan-300 transition-all shadow-sm shadow-sky-500/50" style={{ width: `${percent}%` }} />
+          <div className="h-full rounded-full bg-gradient-to-r from-baby-500 to-baby-600 dark:from-sky-500 dark:to-cyan-300 transition-all shadow-sm" style={{ width: `${percent}%` }} />
         </div>
       </div>
     </section>

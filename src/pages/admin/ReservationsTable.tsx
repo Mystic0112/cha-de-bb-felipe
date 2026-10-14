@@ -37,7 +37,7 @@ export function ReservationsTable({ client, reservations, loading, error, onChan
   return (
     <section aria-labelledby="reservas-titulo">
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-        <h2 id="reservas-titulo" className="text-lg font-bold text-white">
+        <h2 id="reservas-titulo" className="text-lg font-bold text-baby-700 dark:text-white">
           Reservas
         </h2>
         <div className="flex gap-2">
@@ -50,7 +50,7 @@ export function ReservationsTable({ client, reservations, loading, error, onChan
         </div>
       </div>
       {actionError && (
-        <p role="alert" className="mb-3 rounded-xl bg-rose-950/60 border border-rose-800/80 p-3 text-sm text-rose-300">
+        <p role="alert" className="mb-3 rounded-xl bg-rose-50 border border-rose-200 dark:bg-rose-950/60 dark:border-rose-800/80 p-3 text-sm text-rose-700 dark:text-rose-300">
           {actionError}
         </p>
       )}
@@ -60,10 +60,10 @@ export function ReservationsTable({ client, reservations, loading, error, onChan
         <StatusMessage kind="empty">Nenhuma reserva ainda.</StatusMessage>
       )}
       {!loading && !error && reservations.length > 0 && (
-        <div className="card overflow-x-auto border-slate-800">
+        <div className="card overflow-x-auto border-baby-100 dark:border-slate-800">
           <table className="w-full min-w-[720px] text-left text-sm">
             <caption className="sr-only">Lista de reservas dos convidados</caption>
-            <thead className="bg-slate-950/70 border-b border-slate-800 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+            <thead className="bg-baby-50 border-b border-baby-100 dark:bg-slate-950/70 dark:border-slate-800 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
               <tr>
                 <th scope="col" className="px-4 py-3">Convidado</th>
                 <th scope="col" className="px-4 py-3">Telefone</th>
@@ -73,14 +73,14 @@ export function ReservationsTable({ client, reservations, loading, error, onChan
                 <th scope="col" className="px-4 py-3"><span className="sr-only">Ações</span></th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800/70">
+            <tbody className="divide-y divide-baby-100 dark:divide-slate-800/70">
               {reservations.map((r) => (
-                <tr key={r.id} className="align-top hover:bg-slate-850/50 transition-colors">
-                  <td className="px-4 py-3 font-semibold text-slate-100">{r.guest_name}</td>
-                  <td className="px-4 py-3 whitespace-nowrap text-slate-300">{r.guest_phone ?? '-'}</td>
-                  <td className="px-4 py-3 text-sky-300 font-medium">{r.gifts?.title ?? '(removido)'}</td>
-                  <td className="max-w-xs px-4 py-3 break-words whitespace-pre-line text-slate-300">{r.message ?? '-'}</td>
-                  <td className="px-4 py-3 whitespace-nowrap text-slate-400 text-xs">{formatDateTime(r.created_at)}</td>
+                <tr key={r.id} className="align-top hover:bg-baby-50/50 dark:hover:bg-slate-850/50 transition-colors">
+                  <td className="px-4 py-3 font-semibold text-slate-800 dark:text-slate-100">{r.guest_name}</td>
+                  <td className="px-4 py-3 whitespace-nowrap text-slate-600 dark:text-slate-300">{r.guest_phone ?? '-'}</td>
+                  <td className="px-4 py-3 text-baby-700 dark:text-sky-300 font-medium">{r.gifts?.title ?? '(removido)'}</td>
+                  <td className="max-w-xs px-4 py-3 break-words whitespace-pre-line text-slate-600 dark:text-slate-300">{r.message ?? '-'}</td>
+                  <td className="px-4 py-3 whitespace-nowrap text-slate-500 dark:text-slate-400 text-xs">{formatDateTime(r.created_at)}</td>
                   <td className="px-4 py-3 text-right">
                     <button
                       type="button"
