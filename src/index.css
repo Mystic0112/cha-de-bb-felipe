@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Nunito", ui-rounded, "Segoe UI", system-ui, sans-serif;
+  --color-baby-50: #f3f8ff;
+  --color-baby-100: #e3efff;
+  --color-baby-200: #c9e0ff;
+  --color-baby-300: #9fc6f7;
+  --color-baby-500: #4f8fd6;
+  --color-baby-600: #3a74b8;
+  --color-baby-700: #2d5c93;
+  --color-cream: #fffaf2;
+  --color-peach: #ffe3d3;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-cream text-slate-700 font-sans antialiased min-h-dvh;
+    background-image:
+      radial-gradient(circle at 10% 0%, var(--color-baby-100) 0, transparent 40%),
+      radial-gradient(circle at 90% 10%, var(--color-peach) 0, transparent 35%);
+    background-attachment: fixed;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-baby-600;
+  }
+}
+
+@layer components {
+  .btn-primary,
+  .btn-ghost,
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply bg-baby-600 text-white shadow-sm hover:bg-baby-700;
+  }
+  .btn-ghost {
+    @apply bg-white text-baby-700 ring-1 ring-baby-200 hover:bg-baby-50;
+  }
+  .btn-danger {
+    @apply bg-white text-rose-700 ring-1 ring-rose-200 hover:bg-rose-50;
+  }
+  .card {
+    @apply rounded-3xl bg-white/90 shadow-sm ring-1 ring-baby-100 backdrop-blur;
+  }
+  .field-label {
+    @apply mb-1 block text-sm font-semibold text-slate-700;
+  }
+  .field-input {
+    @apply w-full rounded-xl border border-baby-200 bg-white px-3 py-2.5 text-base text-slate-800 placeholder:text-slate-400 focus:border-baby-500 focus:outline-none focus:ring-2 focus:ring-baby-200;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
