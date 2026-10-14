@@ -46,12 +46,12 @@ export function GiftsManager({ client, gifts, onChanged }: GiftsManagerProps) {
 
   return (
     <section aria-labelledby="presentes-titulo">
-      <h2 id="presentes-titulo" className="mb-3 text-lg font-bold text-baby-700">
+      <h2 id="presentes-titulo" className="mb-3 text-lg font-bold text-white">
         Presentes
       </h2>
       <AddGiftForm categories={categories} onAdd={addGift} />
       {error && (
-        <p role="alert" className="my-3 rounded-xl bg-rose-50 p-3 text-sm text-rose-700">
+        <p role="alert" className="my-3 rounded-xl bg-rose-950/60 border border-rose-800/80 p-3 text-sm text-rose-300">
           {error}
         </p>
       )}

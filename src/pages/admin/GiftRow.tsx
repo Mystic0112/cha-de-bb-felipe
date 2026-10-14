@@ -34,14 +34,14 @@ export function GiftRow({ gift, onSaveTotal, onRemove }: GiftRowProps) {
   }
 
   return (
-    <form onSubmit={handleSave} className="card flex flex-wrap items-center gap-3 p-3">
+    <form onSubmit={handleSave} className="card flex flex-wrap items-center gap-3 p-3.5 border-slate-800">
       <div className="min-w-0 flex-1">
-        <p className="font-semibold text-slate-800">{gift.title}</p>
-        <p className="text-xs text-slate-500">
-          {gift.category} · {reserved} escolhido(s) · {gift.available_quantity} disponível(is)
+        <p className="font-semibold text-slate-100">{gift.title}</p>
+        <p className="text-xs text-slate-400 mt-0.5">
+          <span className="text-sky-400 font-medium">{gift.category}</span> · {reserved} escolhido(s) · <span className="text-slate-300 font-medium">{gift.available_quantity} disponível(is)</span>
         </p>
       </div>
-      <label htmlFor={`${id}-total`} className="text-sm text-slate-600">
+      <label htmlFor={`${id}-total`} className="text-sm font-medium text-slate-300">
         Total
       </label>
       <input
@@ -49,7 +49,7 @@ export function GiftRow({ gift, onSaveTotal, onRemove }: GiftRowProps) {
         type="number"
         inputMode="numeric"
         min={reserved}
-        className="field-input w-20 py-1.5"
+        className="field-input w-20 py-1.5 px-2.5 text-center font-bold"
         value={total}
         onChange={(e) => setTotal(e.target.value)}
         aria-describedby={`${id}-hint`}
@@ -57,10 +57,10 @@ export function GiftRow({ gift, onSaveTotal, onRemove }: GiftRowProps) {
       <span id={`${id}-hint`} className="sr-only">
         Mínimo {reserved}, pois já há itens escolhidos.
       </span>
-      <button type="submit" className="btn-ghost px-3 py-1.5 text-xs" disabled={busy || !dirty}>
+      <button type="submit" className="btn-ghost px-3.5 py-1.5 text-xs font-semibold" disabled={busy || !dirty}>
         Salvar
       </button>
-      <button type="button" className="btn-danger px-3 py-1.5 text-xs" onClick={() => void handleRemove()} disabled={busy}>
+      <button type="button" className="btn-danger px-3.5 py-1.5 text-xs font-semibold" onClick={() => void handleRemove()} disabled={busy}>
         Remover
       </button>
     </form>

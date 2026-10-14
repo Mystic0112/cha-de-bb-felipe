@@ -19,19 +19,19 @@ export function AdminPage({ client }: { client: SupabaseClient }) {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
-      <header className="mb-6 flex flex-wrap items-center justify-between gap-3">
+      <header className="mb-8 flex flex-wrap items-center justify-between gap-4 border-b border-slate-800/80 pb-6">
         <div>
-          <p className="text-xs font-semibold tracking-widest text-baby-500 uppercase">
+          <p className="text-xs font-bold tracking-[0.2em] text-sky-400 uppercase">
             Chá de Fraldas do Felipe
           </p>
-          <h1 className="text-2xl font-extrabold text-baby-700">Painel do organizador</h1>
+          <h1 className="mt-1 text-2xl font-black tracking-tight text-white sm:text-3xl">Painel do organizador</h1>
         </div>
         <nav className="flex gap-2">
           <a href="#/" className="btn-ghost">
             Ver lista pública
           </a>
           {session && (
-            <button type="button" className="btn-ghost" onClick={() => void client.auth.signOut()}>
+            <button type="button" className="btn-ghost text-slate-300 hover:text-white" onClick={() => void client.auth.signOut()}>
               Sair
             </button>
           )}

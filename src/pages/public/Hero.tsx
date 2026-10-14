@@ -3,18 +3,24 @@ export function Hero() {
     <header className="py-10 text-center sm:py-14">
       <div
         aria-hidden="true"
-        className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-baby-100 ring-8 ring-white"
+        className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-2xl bg-slate-900 border border-slate-800 shadow-xl shadow-sky-500/10 ring-4 ring-sky-500/10"
       >
-        <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none">
-          <path d="M8 22h48v6c0 13-11 24-24 24S8 41 8 28v-6z" fill="#fff" stroke="#4f8fd6" strokeWidth="3" strokeLinejoin="round" />
-          <path d="M8 22c6 0 10 4 12 10M56 22c-6 0-10 4-12 10" stroke="#4f8fd6" strokeWidth="3" strokeLinecap="round" />
-          <circle cx="24" cy="18" r="3" fill="#ffc9ad" />
-          <circle cx="40" cy="18" r="3" fill="#ffc9ad" />
+        <svg viewBox="0 0 64 64" className="h-11 w-11" fill="none">
+          {/* Berco / Nuvem estilizada moderna */}
+          <path d="M12 26h40v6c0 11-9 20-20 20s-20-9-20-20v-6z" fill="#0f172a" stroke="#38bdf8" strokeWidth="2.5" strokeLinejoin="round" />
+          <path d="M12 26c5 0 9 4 10 9M52 26c-5 0-9 4-10 9" stroke="#38bdf8" strokeWidth="2.5" strokeLinecap="round" />
+          <circle cx="26" cy="20" r="2.5" fill="#38bdf8" />
+          <circle cx="38" cy="20" r="2.5" fill="#38bdf8" />
+          <path d="M32 10l1.5 3 3 1.5-3 1.5-1.5 3-1.5-3-3-1.5 3-1.5z" fill="#facc15" />
         </svg>
       </div>
-      <p className="text-sm font-semibold tracking-widest text-baby-500 uppercase">Chá de Fraldas</p>
-      <h1 className="mt-1 text-4xl font-extrabold text-baby-700 sm:text-5xl">Felipe</h1>
-      <p className="mx-auto mt-4 max-w-md text-slate-600">
+      <p className="text-xs font-bold tracking-[0.25em] text-sky-400 uppercase">
+        Chá de Fraldas
+      </p>
+      <h1 className="mt-2 text-4xl font-black tracking-tight text-white sm:text-5xl">
+        Felipe
+      </h1>
+      <p className="mx-auto mt-4 max-w-md text-base text-slate-400 leading-relaxed">
         Escolha um presente da lista abaixo. Assim que você confirmar, ele é reservado no seu nome
         e some da lista para os outros convidados.
       </p>

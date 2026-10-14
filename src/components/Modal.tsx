@@ -56,7 +56,7 @@ export function Modal({ title, onClose, children, locked = false }: ModalProps) 
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end justify-center bg-slate-900/40 p-0 sm:items-center sm:p-4"
+      className="fixed inset-0 z-50 flex items-end justify-center bg-black/70 backdrop-blur-sm p-0 sm:items-center sm:p-4"
       onMouseDown={(e) => {
         if (e.target === e.currentTarget && !locked) onClose()
       }}
@@ -67,17 +67,17 @@ export function Modal({ title, onClose, children, locked = false }: ModalProps) 
         aria-modal="true"
         aria-labelledby={titleId}
         tabIndex={-1}
-        className="max-h-[92dvh] w-full overflow-y-auto rounded-t-3xl bg-white p-6 shadow-xl sm:max-w-md sm:rounded-3xl"
+        className="max-h-[92dvh] w-full overflow-y-auto rounded-t-3xl border border-slate-800 bg-slate-900 p-6 shadow-2xl sm:max-w-md sm:rounded-3xl"
       >
         <div className="mb-4 flex items-start justify-between gap-4">
-          <h2 id={titleId} className="text-lg font-bold text-baby-700">
+          <h2 id={titleId} className="text-xl font-bold text-white">
             {title}
           </h2>
           <button
             type="button"
             onClick={onClose}
             disabled={locked}
-            className="-m-2 rounded-full p-2 text-slate-500 hover:bg-baby-50 hover:text-slate-700"
+            className="-m-2 rounded-full p-2 text-slate-400 hover:bg-slate-800 hover:text-slate-100 transition"
             aria-label="Fechar"
           >
             <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">

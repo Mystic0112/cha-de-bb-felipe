@@ -89,11 +89,11 @@ export function ReserveForm({ sending, error, onSubmit, onCancel }: ReserveFormP
         </p>
       </div>
       {error && (
-        <p role="alert" className="rounded-xl bg-rose-50 p-3 text-sm text-rose-700">
+        <p role="alert" className="rounded-xl bg-rose-950/60 border border-rose-800/80 p-3 text-sm text-rose-300">
           {error}
         </p>
       )}
-      <div className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+      <div className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end pt-2">
         <button type="button" className="btn-ghost" onClick={onCancel} disabled={sending}>
           Cancelar
         </button>

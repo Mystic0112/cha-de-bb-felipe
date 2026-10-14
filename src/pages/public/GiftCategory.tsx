@@ -10,9 +10,12 @@ export function GiftCategory({ group, onChoose }: GiftCategoryProps) {
   const headingId = `cat-${group.category.replace(/\W+/g, '-').toLowerCase()}`
   return (
     <section aria-labelledby={headingId}>
-      <h3 id={headingId} className="mb-3 px-1 text-lg font-bold text-baby-700">
-        {group.category}
-      </h3>
+      <div className="mb-3.5 flex items-center gap-2.5 px-1">
+        <span className="h-2 w-2 rounded-full bg-sky-400 shadow-sm shadow-sky-400/50" aria-hidden="true" />
+        <h3 id={headingId} className="text-lg font-bold tracking-wide text-slate-100">
+          {group.category}
+        </h3>
+      </div>
       <ul className="grid gap-3 sm:grid-cols-2">
         {group.gifts.map((gift) => (
           <li key={gift.id}>

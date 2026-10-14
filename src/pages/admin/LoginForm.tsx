@@ -19,8 +19,8 @@ export function LoginForm({ client }: { client: SupabaseClient }) {
   }
 
   return (
-    <section className="card mx-auto max-w-sm p-6" aria-labelledby={`${id}-title`}>
-      <h2 id={`${id}-title`} className="mb-4 text-lg font-bold text-baby-700">
+    <section className="card mx-auto max-w-sm p-6 border-slate-800" aria-labelledby={`${id}-title`}>
+      <h2 id={`${id}-title`} className="mb-4 text-xl font-bold text-white text-center">
         Entrar
       </h2>
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -53,11 +53,11 @@ export function LoginForm({ client }: { client: SupabaseClient }) {
           />
         </div>
         {error && (
-          <p role="alert" className="rounded-xl bg-rose-50 p-3 text-sm text-rose-700">
+          <p role="alert" className="rounded-xl bg-rose-950/60 border border-rose-800/80 p-3 text-sm text-rose-300">
             {error}
           </p>
         )}
-        <button type="submit" className="btn-primary w-full" disabled={sending}>
+        <button type="submit" className="btn-primary w-full mt-2" disabled={sending}>
           {sending ? 'Entrando...' : 'Entrar'}
         </button>
       </form>

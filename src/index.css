@@ -2,30 +2,33 @@
 
 @theme {
   --font-sans: "Nunito", ui-rounded, "Segoe UI", system-ui, sans-serif;
-  --color-baby-50: #f3f8ff;
-  --color-baby-100: #e3efff;
-  --color-baby-200: #c9e0ff;
-  --color-baby-300: #9fc6f7;
-  --color-baby-500: #4f8fd6;
-  --color-baby-600: #3a74b8;
-  --color-baby-700: #2d5c93;
-  --color-cream: #fffaf2;
-  --color-peach: #ffe3d3;
+  --color-night-950: #0b0f17;
+  --color-night-900: #111827;
+  --color-night-850: #162032;
+  --color-night-800: #1e293b;
+  --color-night-700: #334155;
+  --color-night-600: #475569;
+  
+  --color-sky-gold: #38bdf8;
+  --color-sky-soft: #7dd3fc;
+  --color-sky-hover: #0284c7;
 }
 
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
+    color-scheme: dark;
   }
   body {
-    @apply bg-cream text-slate-700 font-sans antialiased min-h-dvh;
+    @apply bg-[#0b0f17] text-slate-200 font-sans antialiased min-h-dvh;
     background-image:
-      radial-gradient(circle at 10% 0%, var(--color-baby-100) 0, transparent 40%),
-      radial-gradient(circle at 90% 10%, var(--color-peach) 0, transparent 35%);
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.15), transparent),
+      radial-gradient(circle at 10% 20%, rgba(30, 58, 138, 0.2), transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(15, 23, 42, 0.8), transparent 50%);
     background-attachment: fixed;
   }
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-baby-600;
+    @apply outline-2 outline-offset-2 outline-sky-400;
   }
 }
 
@@ -33,25 +36,25 @@
   .btn-primary,
   .btn-ghost,
   .btn-danger {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-60;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50;
   }
   .btn-primary {
-    @apply bg-baby-600 text-white shadow-sm hover:bg-baby-700;
+    @apply bg-sky-500 text-slate-950 font-bold shadow-lg shadow-sky-500/20 hover:bg-sky-400 active:scale-[0.98];
   }
   .btn-ghost {
-    @apply bg-white text-baby-700 ring-1 ring-baby-200 hover:bg-baby-50;
+    @apply bg-slate-800/80 text-slate-200 border border-slate-700 hover:bg-slate-700/80 hover:border-slate-600 active:scale-[0.98];
   }
   .btn-danger {
-    @apply bg-white text-rose-700 ring-1 ring-rose-200 hover:bg-rose-50;
+    @apply bg-rose-950/40 text-rose-300 border border-rose-800/60 hover:bg-rose-900/50 hover:border-rose-700 active:scale-[0.98];
   }
   .card {
-    @apply rounded-3xl bg-white/90 shadow-sm ring-1 ring-baby-100 backdrop-blur;
+    @apply rounded-2xl bg-slate-900/75 border border-slate-800/80 shadow-xl backdrop-blur-md;
   }
   .field-label {
-    @apply mb-1 block text-sm font-semibold text-slate-700;
+    @apply mb-1.5 block text-sm font-medium text-slate-300;
   }
   .field-input {
-    @apply w-full rounded-xl border border-baby-200 bg-white px-3 py-2.5 text-base text-slate-800 placeholder:text-slate-400 focus:border-baby-500 focus:outline-none focus:ring-2 focus:ring-baby-200;
+    @apply w-full rounded-xl border border-slate-700 bg-slate-950/80 px-3.5 py-2.5 text-base text-slate-100 placeholder:text-slate-500 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500/30 transition;
   }
 }
 
@@ -63,3 +66,4 @@
     transition-duration: 0.01ms !important;
   }
 }
+

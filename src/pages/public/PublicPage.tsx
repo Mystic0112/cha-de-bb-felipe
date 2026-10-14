@@ -43,9 +43,9 @@ export function PublicPage({ client }: { client: SupabaseClient }) {
           ))}
         </div>
       </main>
-      <footer className="mt-12 text-center text-xs text-slate-400">
+      <footer className="mt-16 text-center text-xs text-slate-500">
         Feito com carinho para o Felipe ·{' '}
-        <a href="#/admin" className="underline hover:text-slate-600">
+        <a href="#/admin" className="text-slate-400 underline decoration-slate-600 underline-offset-4 hover:text-sky-400 hover:decoration-sky-400 transition-colors">
           Área do organizador
         </a>
       </footer>
